@@ -8,14 +8,16 @@
 # matplotlib==3.3.3
 tb-nightly
 future
-tqdm
-tgt
-torchaudio
-torch
-einops
-librosa
-webrtcvad
-numpy
-scipy
-matplotlib
+tqdm~=4.64.1
+tgt~=1.4.4
+torchaudio~=0.13.1
+torch~=1.13.1
+einops~=0.6.0
+librosa~=0.10.0
+webrtcvad~=2.0.10
+numpy~=1.23.5
+scipy~=1.10.1
+matplotlib~=3.7.0
 chardet
+Encoder~=1.1
+scikit-learn~=1.2.1
