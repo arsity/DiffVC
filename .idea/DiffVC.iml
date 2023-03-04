@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/m4singer" />
+      <excludeFolder url="file://$MODULE_DIR$/mels" />
+      <excludeFolder url="file://$MODULE_DIR$/wavs" />
     </content>
     <orderEntry type="jdk" jdkName="DiffVC" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
