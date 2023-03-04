@@ -1,4 +1,3 @@
-import sys
 from pathlib import Path
 import torchaudio
 import torchaudio.transforms as T
@@ -23,8 +22,11 @@ def to_resample_rate(m4singer_path: str, target_path: str, target_sr: int):
                 if not tn.parent.exists():
                     tn.parent.mkdir(parents=True)
 
+            print(fn, " --------> ", tn)
             torchaudio.save(tn, rs_waveform, target_sr)
 
 
 if __name__ == '__main__':
+    print("\n", "\n", "-" * 10, "Resample m4singer", "-" * 10)
+
     to_resample_rate(m4singer_path, target_path, 22050)

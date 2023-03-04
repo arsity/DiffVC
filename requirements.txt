@@ -21,3 +21,5 @@ matplotlib~=3.7.0
 chardet
 Encoder~=1.1
 scikit-learn~=1.2.1
+vc~=14.2
+soundfile~=0.12.1
