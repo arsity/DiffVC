@@ -1,22 +1,12 @@
 import sys
-from pathlib import Path
 
 import librosa
 import numpy as np
-from encoder import inference as spk_encoder
-from librosa.core import load
 from librosa.filters import mel as librosa_mel_fn
+from librosa.core import load
 
-m4singer_path = "m4singer"
-
-
-def to_half_sample_rate(m4singer_path):
-    path = Path("m4singer")
-    for subdir in path.iterdir():
-        for fn in list(subdir.glob("**/*.wav")):
-            print(fn)
-            sys.stdout.flush()
-
+sys.path.append('speaker_encoder/')
+from encoder import inference as spk_encoder
 
 mel_basis = librosa_mel_fn(sr=22050, n_fft=1024, n_mels=80, fmin=0, fmax=8000)
 
@@ -36,7 +26,3 @@ def get_embed(wav_path):
     wav_preprocessed = spk_encoder.preprocess_wav(wav_path)
     embed = spk_encoder.embed_utterance(wav_preprocessed)
     return embed
-
-
-if __name__ == '__main__':
-    to_half_sample_rate(m4singer_path)
