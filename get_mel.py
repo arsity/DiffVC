@@ -1,18 +1,10 @@
-import sys
-import librosa
-import numpy as np
-import torch
-from librosa.filters import mel as librosa_mel_fn
-from librosa.core import load
 from pathlib import Path
+
+import torch
 import torchaudio
 import torchaudio.transforms as T
-import soundfile as sf
 
-sys.path.append('speaker_encoder/')
-from encoder import inference as spk_encoder
-
-mel_basis = librosa_mel_fn(sr=22050, n_fft=1024, n_mels=80, fmin=0, fmax=8000)
+# mel_basis = librosa_mel_fn(sr=22050, n_fft=1024, n_mels=80, fmin=0, fmax=8000)
 
 source_path = "wavs"
 target_path = "mels"
@@ -69,9 +61,3 @@ if __name__ == '__main__':
 
             print(fn, " --------> ", tn)
             torchaudio.save(tn, get_mel(fn), 22050, format="wav")
-
-
-def get_embed(wav_path):
-    wav_preprocessed = spk_encoder.preprocess_wav(wav_path)
-    embed = spk_encoder.embed_utterance(wav_preprocessed)
-    return embed

@@ -5,4 +5,4 @@ rm -rf mels || return
 
 python3 resample.py
 python3 get_mel.py
-
+python3 get_embed.py
