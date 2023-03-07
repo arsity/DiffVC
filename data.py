@@ -225,13 +225,13 @@ class VCDecDataset(torch.utils.data.Dataset):
         return (mels, embed)
 
     def get_mels(self, audio_id, spk):
-        mel_path = os.path.join(self.mel_dir, spk, audio_id + '_mel.npy')
+        mel_path = os.path.join(self.mel_dir, spk, audio_id + '.npy')
         mels = np.load(mel_path)
         mels = torch.from_numpy(mels).float()
         return mels
 
     def get_embed(self, audio_id, spk):
-        embed_path = os.path.join(self.emb_dir, spk, audio_id + '_embed.npy')
+        embed_path = os.path.join(self.emb_dir, spk, audio_id + '.npy')
         embed = np.load(embed_path)
         embed = torch.from_numpy(embed).float()
         return embed
